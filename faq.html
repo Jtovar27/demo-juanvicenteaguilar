@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preguntas frecuentes — Juan Vicente Aguilar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;550;600;700&display=swap" rel="stylesheet">
+  <style id="app-styles">/* ============================================================
+   JUAN VICENTE AGUILAR — Corredor de Seguros
+   Design System
+   ============================================================ */
+
+:root {
+  /* Brand — overridable via Tweaks */
+  --brand: #0A1F44;
+  --brand-700: #0e2a5c;
+  --brand-600: #153a80;
+  --brand-50: #eef2f9;
+
+  /* Neutrals */
+  --bg: #F7F5F0;           /* warm off-white */
+  --bg-2: #FBFAF6;
+  --surface: #ffffff;
+  --ink: #0B1220;
+  --ink-2: #1F2937;
+  --muted: #556074;
+  --muted-2: #8A94A6;
+  --line: #E6E3DA;
+  --line-2: #EFECE3;
+
+  /* Accent — muted, used sparingly */
+  --accent: #B08A4B;       /* understated gold */
+  --accent-soft: #F2EADB;
+
+  /* State */
+  --success: #1F7A5A;
+  --danger: #B4442E;
+
+  /* Radii & shadows */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 22px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 1px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 8px 24px -12px rgba(10, 31, 68, 0.14), 0 2px 6px -2px rgba(10, 31, 68, 0.06);
+  --shadow-lg: 0 30px 60px -30px rgba(10, 31, 68, 0.28), 0 12px 24px -12px rgba(10, 31, 68, 0.10);
+
+  /* Type */
+  --font-sans: 'Inter', 'Geist', ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: 'Inter', 'Geist', ui-sans-serif, system-ui, sans-serif;
+
+  /* Layout */
+  --container: 1240px;
+  --nav-h: 76px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11";
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+input, textarea, select { font-family: inherit; font-size: inherit; color: inherit; }
+
+/* ---------- Typography ---------- */
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px; height: 1px; background: var(--muted-2);
+  display: inline-block;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(40px, 5.2vw, 68px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 550; }
+h2 { font-size: clamp(30px, 3.4vw, 46px); line-height: 1.08; letter-spacing: -0.03em; }
+h3 { font-size: clamp(20px, 1.6vw, 24px); line-height: 1.25; }
+h4 { font-size: 17px; line-height: 1.35; }
+
+p { margin: 0; color: var(--ink-2); text-wrap: pretty; }
+.lead { font-size: clamp(17px, 1.2vw, 19px); line-height: 1.55; color: var(--muted); max-width: 62ch; }
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.section { padding: clamp(64px, 8vw, 112px) 0; }
+.section-sm { padding: clamp(48px, 6vw, 80px) 0; }
+
+.divider { height: 1px; background: var(--line); width: 100%; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.005em;
+  transition: all .2s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+.btn svg { width: 16px; height: 16px; }
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--brand-700); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn-ghost:hover { background: var(--surface); border-color: var(--ink); }
+.btn-whatsapp {
+  background: #1FAE54;
+  color: #fff;
+}
+.btn-whatsapp:hover { background: #178c43; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-sm { padding: 10px 16px; font-size: 13px; }
+
+/* link with arrow */
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--brand);
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid transparent;
+  transition: gap .2s ease;
+}
+.link-arrow:hover { gap: 10px; }
+.link-arrow svg { width: 14px; height: 14px; }
+
+/* ---------- Header ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(247, 245, 240, 0.85);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease, background .2s ease;
+}
+.header.scrolled { border-bottom-color: var(--line); background: rgba(247, 245, 240, 0.92); }
+
+.nav {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-weight: 600; letter-spacing: -0.02em; font-size: 16px;
+  color: var(--ink);
+}
+.logo-mark {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: var(--brand);
+  color: #fff;
+  display: grid; place-items: center;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0;
+}
+.logo small {
+  display:block; font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+  color: var(--muted); text-transform: uppercase; margin-top: 2px;
+}
+.logo-text { line-height: 1.05; }
+
+.nav-links {
+  display: flex; align-items: center; gap: 6px;
+}
+.nav-links a {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: var(--ink-2);
+  border-radius: 8px;
+  transition: color .15s ease, background .15s ease;
+  font-weight: 450;
+}
+.nav-links a:hover { background: rgba(10,31,68,0.05); color: var(--ink); }
+.nav-links a.active { color: var(--brand); font-weight: 550; }
+
+.nav-cta { display: flex; align-items: center; gap: 10px; }
+
+.nav-toggle {
+  display: none;
+  width: 40px; height: 40px;
+  align-items: center; justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.nav-toggle svg { width: 20px; height: 20px; }
+
+/* Mobile drawer */
+.mobile-drawer {
+  display: none;
+  position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+  background: var(--bg);
+  padding: 24px 28px;
+  z-index: 55;
+  animation: fadeIn .2s ease;
+}
+.mobile-drawer.open { display: flex; flex-direction: column; gap: 8px; }
+.mobile-drawer a {
+  padding: 16px 0;
+  font-size: 20px;
+  border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.mobile-drawer .mobile-cta { margin-top: 24px; }
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--ink);
+  color: #D7DDE8;
+  padding: 80px 0 28px;
+  margin-top: 0;
+}
+.footer h4 { color: #fff; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+.footer a { color: #B9C2D1; font-size: 14px; transition: color .15s ease; }
+.footer a:hover { color: #fff; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-brand p {
+  color: #97A2B4; font-size: 14px; max-width: 34ch; margin-top: 14px;
+}
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-bottom {
+  margin-top: 72px; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: #8693A7;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer .logo-text { color: #fff; }
+.footer .logo small { color: #8693A7; }
+.footer .logo-mark { background: #fff; color: var(--brand); }
+
+/* ---------- WhatsApp FAB ---------- */
+.whatsapp-fab {
+  position: fixed;
+  right: 22px; bottom: 22px;
+  z-index: 70;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #1FAE54;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 500; font-size: 14px;
+  box-shadow: 0 14px 36px -10px rgba(31, 174, 84, 0.45), 0 4px 12px -4px rgba(0,0,0,0.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-fab:hover { transform: translateY(-2px); box-shadow: 0 20px 50px -12px rgba(31, 174, 84, 0.55); }
+.whatsapp-fab svg { width: 20px; height: 20px; }
+.whatsapp-fab .whatsapp-label { display: inline-block; }
+
+/* ---------- Tweaks panel ---------- */
+.tweaks-panel {
+  position: fixed;
+  right: 22px; bottom: 86px;
+  z-index: 71;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 16px;
+  width: 260px;
+  display: none;
+  animation: fadeIn .2s ease;
+}
+.tweaks-panel.visible { display: block; }
+.tweaks-panel h5 { margin: 0 0 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); font-weight: 600; }
+.tweaks-swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+.tweaks-swatch {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--line);
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+.tweaks-swatch:hover { transform: scale(1.1); }
+.tweaks-swatch.active { box-shadow: 0 0 0 2px var(--ink); }
+
+/* ---------- Reveal animation ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Utility ---------- */
+.muted { color: var(--muted); }
+.center { text-align: center; }
+.grid { display: grid; gap: 24px; }
+.flex { display: flex; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.stack { display: flex; flex-direction: column; }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: #D8D3C4; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .nav-cta .btn:not(.nav-cta-mobile) { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .whatsapp-fab .whatsapp-label { display: none; }
+  .whatsapp-fab { padding: 14px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+/* ---------- Focus visibility ---------- */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--brand);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 0 0 var(--r-md) var(--r-md);
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 200;
+  transition: top .15s ease;
+}
+.skip-link:focus-visible { top: 0; outline-offset: 0; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+</style>
+  <style>
+    .page-hero { padding: clamp(56px,7vw,96px) 0 clamp(32px,4vw,56px); text-align: center; }
+    .page-hero h1 { margin-top: 20px; max-width: 22ch; margin-inline: auto; }
+    .page-hero p.lead { margin-top: 20px; margin-inline: auto; }
+    .page-hero .eyebrow { justify-content: center; }
+
+    .faq-wrap { padding: 0 0 clamp(64px,7vw,100px); }
+    .faq-grid { display: grid; grid-template-columns: 0.9fr 2fr; gap: clamp(32px, 5vw, 72px); align-items: flex-start; }
+    @media (max-width: 900px) { .faq-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+    .faq-cats { position: sticky; top: calc(var(--nav-h) + 24px); display: flex; flex-direction: column; gap: 4px; }
+    .faq-cat {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 16px; border-radius: var(--r-md);
+      font-size: 14.5px; color: var(--muted); cursor: pointer;
+      transition: all .15s ease;
+      text-align: left;
+      border: 1px solid transparent;
+    }
+    .faq-cat:hover { background: var(--surface); color: var(--ink); }
+    .faq-cat.active { background: var(--surface); color: var(--ink); font-weight: 550; border-color: var(--line); }
+    .faq-cat .count { font-size: 12px; color: var(--muted-2); }
+
+    .faq-col h2 { margin-bottom: 8px; font-size: 28px; }
+    .faq-col > p { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+
+    .faq-item { border-bottom: 1px solid var(--line); padding: 22px 0; }
+    .faq-item:first-of-type { border-top: 1px solid var(--line); }
+    .faq-q {
+      width: 100%; display: flex; justify-content: space-between; align-items: flex-start;
+      font-size: 17px; font-weight: 500; color: var(--ink); text-align: left;
+      letter-spacing: -0.01em; padding: 0; gap: 16px;
+    }
+    .faq-q-icon { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line);
+      display: grid; place-items: center; flex-shrink: 0; transition: all .2s ease; }
+    .faq-q-icon svg { width: 14px; height: 14px; transition: transform .25s ease; }
+    .faq-item.open .faq-q-icon { background: var(--brand); border-color: var(--brand); color: #fff; }
+    .faq-item.open .faq-q-icon svg { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, margin .25s ease, opacity .25s ease;
+      color: var(--muted); font-size: 15px; line-height: 1.65; opacity: 0;
+    }
+    .faq-item.open .faq-a { max-height: 400px; margin-top: 14px; opacity: 1; }
+
+    .faq-group h3 {
+      font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); font-weight: 600;
+      margin: 40px 0 16px;
+    }
+    .faq-group:first-child h3 { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container reveal">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h1>Las dudas más comunes, respondidas con claridad.</h1>
+        <p class="lead">Si tu pregunta no está aquí, escríbeme directamente. Respondo personalmente.</p>
+      </div>
+    </section>
+
+    <section class="faq-wrap">
+      <div class="container">
+        <div class="faq-grid">
+          <aside class="faq-cats">
+            <button class="faq-cat active" data-cat="general"><span>General</span><span class="count">4</span></button>
+            <button class="faq-cat" data-cat="cotizacion"><span>Cotización</span><span class="count">3</span></button>
+            <button class="faq-cat" data-cat="siniestros"><span>Siniestros</span><span class="count">3</span></button>
+            <button class="faq-cat" data-cat="empresas"><span>Empresas</span><span class="count">3</span></button>
+            <div style="margin-top: 32px;">
+              <a href="contacto.html" class="btn btn-ghost btn-sm">¿Más preguntas? Escríbeme<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </aside>
+
+          <div class="faq-col reveal">
+            <!-- GENERAL -->
+            <div class="faq-group" data-group="general">
+              <h3>General</h3>
+              <div class="faq-item open">
+                <button class="faq-q">¿Qué tipo de seguro necesito?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Depende de lo que quieras proteger y los riesgos reales que enfrentas. En una reunión breve analizamos: dependencia económica, patrimonio, situación médica familiar, uso del vehículo y exposición laboral. A partir de ahí proponemos el paquete mínimo necesario y las mejoras opcionales.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">¿Trabajas con varias aseguradoras?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Sí. Soy corredor independiente con acuerdos con 9 de las principales aseguradoras de Venezuela (Mercantil, Caracas, MAPFRE, Pirámide, Universitas, entre otras). Esto me permite comparar objetivamente y negociar mejores condiciones.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">¿La atención es presencial u online?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Ambas opciones. Atiendo presencialmente en Caracas y remotamente (videollamada o WhatsApp) para el resto del país. Toda la gestión documental es 100% digital.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">¿Cuál es tu horario de atención?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">De lunes a viernes, 8:30 am a 6:00 pm. Para siniestros urgentes o emergencias médicas en el extranjero, tengo canal 24/7 por WhatsApp.</div>
+              </div>
+            </div>
+
+            <!-- COTIZACIÓN -->
+            <div class="faq-group" data-group="cotizacion" style="display:none;">
+              <h3>Cotización</h3>
+              <div class="faq-item open">
+                <button class="faq-q">¿Puedo cotizar sin compromiso de contratar?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Sí. La primera asesoría, el análisis de necesidades y la cotización comparativa son gratuitas y sin compromiso. Si la mejor opción del mercado no te conviene, te lo digo.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">¿Qué documentos necesito para cotizar?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Para cotizar basta con datos básicos (nombre, edad, ciudad, tipo de seguro). Para emitir pólizas: cédula, RIF si aplica, carnet de circulación del vehículo, examen médico para Vida, etc. Te envío la lista específica según el producto.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">¿En cuánto tiempo recibo la cotización?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Las cotizaciones estándar llegan en 24 horas hábiles. Para casos complejos (empresas grandes, patrimoniales específicos), puede tardar entre 3 y 7 días dependiendo del análisis de riesgo.</div>
+              </div>
+            </div>
+
+            <!-- SINIESTROS -->
+            <div class="faq-group" data-group="siniestros" style="display:none;">
+              <h3>Siniestros</h3>
+              <div class="faq-item open">
+                <button class="faq-q">¿Me ayudas si tengo un siniestro?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Absolutamente. Soy tu punto de contacto desde el primer aviso. Coordino el perito, te acompaño en la documentación, hago seguimiento al expediente y escalo cuando la respuesta es lenta o injustificada.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">¿Qué hago en caso de accidente?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Escríbeme por WhatsApp inmediatamente con fotos del lugar, daños y documentos. Te guío paso a paso: qué decir al perito, qué firmar, qué no firmar. El acompañamiento inicial es crítico para la correcta resolución.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">¿Qué pasa si la aseguradora niega el reclamo?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Revisamos la causal específica de la negativa contra la póliza. Si la negativa es improcedente, presentamos reconsideración técnica y, de ser necesario, escalamos a SUDEASEG. En mis 12 años he revertido la mayoría de los casos que llegan hasta ahí.</div>
+              </div>
+            </div>
+
+            <!-- EMPRESAS -->
+            <div class="faq-group" data-group="empresas" style="display:none;">
+              <h3>Empresas</h3>
+              <div class="faq-item open">
+                <button class="faq-q">¿Atiendes pólizas para empresas?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Sí. Diseño programas corporativos para empresas desde 10 hasta 500 empleados: HCM colectivo, vida grupal, patrimoniales, flota vehicular, responsabilidad civil profesional y seguros técnicos de obra.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">¿Cómo se negocian las pólizas colectivas?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Analizamos el perfil demográfico de la nómina, la siniestralidad histórica y las prioridades de recursos humanos. Con ese diagnóstico negociamos con varias aseguradoras y armamos una tabla comparativa presentable en junta directiva.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">¿Puedo renovar mi póliza corporativa contigo?
+                  <span class="faq-q-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                </button>
+                <div class="faq-a">Sí. Puedo asumir la administración de pólizas ya existentes sin cambiar de aseguradora si así lo prefieres. En la renovación cotizamos con otras compañías para validar que sigues teniendo la mejor oferta.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="final-cta reveal" style="background: linear-gradient(135deg, var(--brand) 0%, var(--brand-700) 100%); border-radius: var(--r-xl); padding: clamp(48px,6vw,88px); color:#fff; text-align:center;">
+          <h2 style="color:#fff; max-width: 24ch; margin: 0 auto 18px;">¿Tu pregunta no está aquí?</h2>
+          <p style="color: rgba(255,255,255,0.78); max-width: 50ch; margin: 0 auto 32px;">Escríbeme por WhatsApp o llena el formulario de contacto. Respondo personalmente.</p>
+          <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+            <a href="contacto.html" class="btn btn-primary" style="background:#fff; color: var(--brand);">Ir al formulario</a>
+            <a href="https://wa.me/584141234567" class="btn btn-ghost" style="color:#fff; border-color: rgba(255,255,255,0.25);" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-fab"></div>
+  <script>/* Shared shell: header, footer, whatsapp FAB, tweaks, reveal */
+
+const WHATSAPP_NUMBER = '584141234567'; // placeholder Venezuela
+const WHATSAPP_TEXT = encodeURIComponent('Hola Juan Vicente, me gustaría recibir asesoría sobre un seguro.');
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
+
+const NAV_LINKS = [
+  { href: 'index.html', label: 'Inicio' },
+  { href: 'nosotros.html', label: 'Nosotros' },
+  { href: 'servicios.html', label: 'Seguros' },
+  { href: 'cotiza.html', label: 'Cotiza' },
+  { href: 'faq.html', label: 'FAQ' },
+  { href: 'contacto.html', label: 'Contacto' },
+];
+
+function currentPage() {
+  const path = location.pathname.split('/').pop() || 'index.html';
+  return path;
+}
+
+function renderHeader() {
+  const host = document.getElementById('site-header');
+  if (!host) return;
+  const cur = currentPage();
+  host.innerHTML = `
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="header" id="header">
+      <div class="container nav">
+        <a href="index.html" class="logo" aria-label="Juan Vicente Aguilar">
+          <span class="logo-mark">JA</span>
+          <span class="logo-text">
+            Juan Vicente Aguilar
+            <small>Corredor de seguros</small>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Principal">
+          ${NAV_LINKS.map(l => `<a href="${l.href}" class="${cur === l.href ? 'active' : ''}">${l.label}</a>`).join('')}
+        </nav>
+        <div class="nav-cta">
+          <a href="cotiza.html" class="btn btn-primary btn-sm">
+            Cotizar ahora
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileDrawer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        ${NAV_LINKS.map(l => `<a href="${l.href}">${l.label}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>`).join('')}
+        <a href="cotiza.html" class="btn btn-primary mobile-cta" style="justify-content:center; padding: 16px 22px;">Cotizar ahora</a>
+      </div>
+    </header>
+  `;
+
+  // scroll border
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // mobile toggle
+  const toggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('mobileDrawer');
+  toggle?.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    drawer.setAttribute('aria-hidden', String(!isOpen));
+  });
+  drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menú');
+  }));
+}
+
+function renderFooter() {
+  const host = document.getElementById('site-footer');
+  if (!host) return;
+  host.innerHTML = `
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo">
+              <span class="logo-mark">JA</span>
+              <span class="logo-text">
+                Juan Vicente Aguilar
+                <small>Corredor de seguros</small>
+              </span>
+            </div>
+            <p>Asesoría profesional e independiente en seguros para personas, familias y empresas en Venezuela. Cotización, emisión, renovación y acompañamiento ante siniestros.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="servicios.html#salud">Salud</a></li>
+              <li><a href="servicios.html#auto">Auto y RCV</a></li>
+              <li><a href="servicios.html#vida">Vida</a></li>
+              <li><a href="servicios.html#viajes">Viajes</a></li>
+              <li><a href="servicios.html#hogar">Hogar y Comercio</a></li>
+              <li><a href="servicios.html#empresas">Empresas</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Compañía</h4>
+            <ul>
+              <li><a href="nosotros.html">Sobre Juan Vicente</a></li>
+              <li><a href="faq.html">Preguntas frecuentes</a></li>
+              <li><a href="cotiza.html">Cotiza tu seguro</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+              <li>Caracas, Venezuela</li>
+              <li><a href="tel:+584141234567">+58 414 123 4567</a></li>
+              <li><a href="mailto:asesoria@jvaguilar.com">asesoria@jvaguilar.com</a></li>
+              <li>Lun – Vie · 8:30 am – 6:00 pm</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© ${new Date().getFullYear()} Juan Vicente Aguilar — Corredor de seguros. Todos los derechos reservados.</span>
+          <span>Registro SUDEASEG · RIF V-00.000.000-0</span>
+        </div>
+      </div>
+    </footer>
+  `;
+}
+
+function renderWhatsapp() {
+  const host = document.getElementById('site-fab');
+  if (!host) return;
+  host.innerHTML = `
+    <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Chatea por WhatsApp">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+        <path d="M19.11 17.2c-.28-.14-1.66-.82-1.92-.91-.26-.09-.45-.14-.63.14-.19.28-.72.91-.88 1.1-.16.19-.32.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.74.35-.26.28-.98.96-.98 2.34 0 1.38 1 2.72 1.14 2.91.14.19 1.98 3.02 4.8 4.23.67.29 1.19.46 1.6.59.67.21 1.28.18 1.77.11.54-.08 1.66-.68 1.9-1.34.23-.66.23-1.22.16-1.34-.07-.12-.26-.19-.54-.33zM16 5.33A10.66 10.66 0 0 0 6.92 21.4L5.33 26.67l5.43-1.57A10.67 10.67 0 1 0 16 5.33zm0 19.37a8.7 8.7 0 0 1-4.4-1.2l-.32-.19-3.22.93.94-3.14-.21-.33A8.7 8.7 0 1 1 16 24.7z"/>
+      </svg>
+      <span class="whatsapp-label">Escríbenos por WhatsApp</span>
+    </a>
+  `;
+}
+
+/* Tweaks */
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "primaryColor": "#0A1F44"
+}/*EDITMODE-END*/;
+
+const BRAND_PRESETS = [
+  { name: 'Azul marino',   value: '#0A1F44' },
+  { name: 'Verde bosque',  value: '#1E3A2F' },
+  { name: 'Negro ébano',   value: '#111418' },
+  { name: 'Azul eléctrico',value: '#1E4FD8' },
+  { name: 'Vino tinto',    value: '#5C1A2B' },
+  { name: 'Cobre',         value: '#8A4B2A' },
+];
+
+function applyTweaks(state) {
+  const color = state.primaryColor || TWEAK_DEFAULTS.primaryColor;
+  document.documentElement.style.setProperty('--brand', color);
+  // derive hover
+  const hover = shade(color, -8);
+  document.documentElement.style.setProperty('--brand-700', hover);
+}
+
+function shade(hex, percent) {
+  const h = hex.replace('#','');
+  const r = parseInt(h.substr(0,2),16);
+  const g = parseInt(h.substr(2,2),16);
+  const b = parseInt(h.substr(4,2),16);
+  const adj = (c) => Math.max(0, Math.min(255, Math.round(c + (percent/100)*255)));
+  return '#' + [adj(r),adj(g),adj(b)].map(c=>c.toString(16).padStart(2,'0')).join('');
+}
+
+let tweakState = { ...TWEAK_DEFAULTS };
+
+function renderTweaks() {
+  // Listen FIRST
+  window.addEventListener('message', (e) => {
+    const d = e.data || {};
+    if (d.type === '__activate_edit_mode') showTweaks(true);
+    if (d.type === '__deactivate_edit_mode') showTweaks(false);
+  });
+  // Then announce
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch {}
+
+  const el = document.createElement('div');
+  el.className = 'tweaks-panel';
+  el.id = 'tweaksPanel';
+  el.innerHTML = `
+    <h5>Color primario de marca</h5>
+    <div class="tweaks-swatches">
+      ${BRAND_PRESETS.map(p => `
+        <button class="tweaks-swatch ${p.value === tweakState.primaryColor ? 'active' : ''}"
+          data-color="${p.value}"
+          style="background:${p.value}"
+          title="${p.name}"></button>
+      `).join('')}
+    </div>
+  `;
+  document.body.appendChild(el);
+  el.querySelectorAll('.tweaks-swatch').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const c = btn.getAttribute('data-color');
+      tweakState.primaryColor = c;
+      applyTweaks(tweakState);
+      el.querySelectorAll('.tweaks-swatch').forEach(b => b.classList.toggle('active', b === btn));
+      try { window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { primaryColor: c } }, '*'); } catch {}
+    });
+  });
+
+  applyTweaks(tweakState);
+}
+
+function showTweaks(v) {
+  const p = document.getElementById('tweaksPanel');
+  if (p) p.classList.toggle('visible', v);
+}
+
+/* Reveal on scroll */
+function initReveal() {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(e => io.observe(e));
+}
+
+/* Init */
+document.addEventListener('DOMContentLoaded', () => {
+  renderHeader();
+  renderFooter();
+  renderWhatsapp();
+  renderTweaks();
+  initReveal();
+});
+</script>
+  <script>
+    document.querySelectorAll('.faq-cat').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.faq-cat').forEach(b => b.classList.toggle('active', b === btn));
+        const cat = btn.dataset.cat;
+        document.querySelectorAll('.faq-group').forEach(g => {
+          g.style.display = g.dataset.group === cat ? 'block' : 'none';
+        });
+      });
+    });
+    document.querySelectorAll('.faq-item .faq-q').forEach(q => {
+      q.addEventListener('click', () => q.closest('.faq-item').classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>

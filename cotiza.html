@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cotiza tu seguro — Juan Vicente Aguilar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;550;600;700&display=swap" rel="stylesheet">
+  <style id="app-styles">/* ============================================================
+   JUAN VICENTE AGUILAR — Corredor de Seguros
+   Design System
+   ============================================================ */
+
+:root {
+  /* Brand — overridable via Tweaks */
+  --brand: #0A1F44;
+  --brand-700: #0e2a5c;
+  --brand-600: #153a80;
+  --brand-50: #eef2f9;
+
+  /* Neutrals */
+  --bg: #F7F5F0;           /* warm off-white */
+  --bg-2: #FBFAF6;
+  --surface: #ffffff;
+  --ink: #0B1220;
+  --ink-2: #1F2937;
+  --muted: #556074;
+  --muted-2: #8A94A6;
+  --line: #E6E3DA;
+  --line-2: #EFECE3;
+
+  /* Accent — muted, used sparingly */
+  --accent: #B08A4B;       /* understated gold */
+  --accent-soft: #F2EADB;
+
+  /* State */
+  --success: #1F7A5A;
+  --danger: #B4442E;
+
+  /* Radii & shadows */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 22px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 1px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 8px 24px -12px rgba(10, 31, 68, 0.14), 0 2px 6px -2px rgba(10, 31, 68, 0.06);
+  --shadow-lg: 0 30px 60px -30px rgba(10, 31, 68, 0.28), 0 12px 24px -12px rgba(10, 31, 68, 0.10);
+
+  /* Type */
+  --font-sans: 'Inter', 'Geist', ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: 'Inter', 'Geist', ui-sans-serif, system-ui, sans-serif;
+
+  /* Layout */
+  --container: 1240px;
+  --nav-h: 76px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11";
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+input, textarea, select { font-family: inherit; font-size: inherit; color: inherit; }
+
+/* ---------- Typography ---------- */
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px; height: 1px; background: var(--muted-2);
+  display: inline-block;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(40px, 5.2vw, 68px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 550; }
+h2 { font-size: clamp(30px, 3.4vw, 46px); line-height: 1.08; letter-spacing: -0.03em; }
+h3 { font-size: clamp(20px, 1.6vw, 24px); line-height: 1.25; }
+h4 { font-size: 17px; line-height: 1.35; }
+
+p { margin: 0; color: var(--ink-2); text-wrap: pretty; }
+.lead { font-size: clamp(17px, 1.2vw, 19px); line-height: 1.55; color: var(--muted); max-width: 62ch; }
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.section { padding: clamp(64px, 8vw, 112px) 0; }
+.section-sm { padding: clamp(48px, 6vw, 80px) 0; }
+
+.divider { height: 1px; background: var(--line); width: 100%; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.005em;
+  transition: all .2s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+.btn svg { width: 16px; height: 16px; }
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--brand-700); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn-ghost:hover { background: var(--surface); border-color: var(--ink); }
+.btn-whatsapp {
+  background: #1FAE54;
+  color: #fff;
+}
+.btn-whatsapp:hover { background: #178c43; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-sm { padding: 10px 16px; font-size: 13px; }
+
+/* link with arrow */
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--brand);
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid transparent;
+  transition: gap .2s ease;
+}
+.link-arrow:hover { gap: 10px; }
+.link-arrow svg { width: 14px; height: 14px; }
+
+/* ---------- Header ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(247, 245, 240, 0.85);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease, background .2s ease;
+}
+.header.scrolled { border-bottom-color: var(--line); background: rgba(247, 245, 240, 0.92); }
+
+.nav {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-weight: 600; letter-spacing: -0.02em; font-size: 16px;
+  color: var(--ink);
+}
+.logo-mark {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: var(--brand);
+  color: #fff;
+  display: grid; place-items: center;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0;
+}
+.logo small {
+  display:block; font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+  color: var(--muted); text-transform: uppercase; margin-top: 2px;
+}
+.logo-text { line-height: 1.05; }
+
+.nav-links {
+  display: flex; align-items: center; gap: 6px;
+}
+.nav-links a {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: var(--ink-2);
+  border-radius: 8px;
+  transition: color .15s ease, background .15s ease;
+  font-weight: 450;
+}
+.nav-links a:hover { background: rgba(10,31,68,0.05); color: var(--ink); }
+.nav-links a.active { color: var(--brand); font-weight: 550; }
+
+.nav-cta { display: flex; align-items: center; gap: 10px; }
+
+.nav-toggle {
+  display: none;
+  width: 40px; height: 40px;
+  align-items: center; justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.nav-toggle svg { width: 20px; height: 20px; }
+
+/* Mobile drawer */
+.mobile-drawer {
+  display: none;
+  position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+  background: var(--bg);
+  padding: 24px 28px;
+  z-index: 55;
+  animation: fadeIn .2s ease;
+}
+.mobile-drawer.open { display: flex; flex-direction: column; gap: 8px; }
+.mobile-drawer a {
+  padding: 16px 0;
+  font-size: 20px;
+  border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.mobile-drawer .mobile-cta { margin-top: 24px; }
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--ink);
+  color: #D7DDE8;
+  padding: 80px 0 28px;
+  margin-top: 0;
+}
+.footer h4 { color: #fff; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+.footer a { color: #B9C2D1; font-size: 14px; transition: color .15s ease; }
+.footer a:hover { color: #fff; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-brand p {
+  color: #97A2B4; font-size: 14px; max-width: 34ch; margin-top: 14px;
+}
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-bottom {
+  margin-top: 72px; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: #8693A7;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer .logo-text { color: #fff; }
+.footer .logo small { color: #8693A7; }
+.footer .logo-mark { background: #fff; color: var(--brand); }
+
+/* ---------- WhatsApp FAB ---------- */
+.whatsapp-fab {
+  position: fixed;
+  right: 22px; bottom: 22px;
+  z-index: 70;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #1FAE54;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 500; font-size: 14px;
+  box-shadow: 0 14px 36px -10px rgba(31, 174, 84, 0.45), 0 4px 12px -4px rgba(0,0,0,0.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-fab:hover { transform: translateY(-2px); box-shadow: 0 20px 50px -12px rgba(31, 174, 84, 0.55); }
+.whatsapp-fab svg { width: 20px; height: 20px; }
+.whatsapp-fab .whatsapp-label { display: inline-block; }
+
+/* ---------- Tweaks panel ---------- */
+.tweaks-panel {
+  position: fixed;
+  right: 22px; bottom: 86px;
+  z-index: 71;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 16px;
+  width: 260px;
+  display: none;
+  animation: fadeIn .2s ease;
+}
+.tweaks-panel.visible { display: block; }
+.tweaks-panel h5 { margin: 0 0 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); font-weight: 600; }
+.tweaks-swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+.tweaks-swatch {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--line);
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+.tweaks-swatch:hover { transform: scale(1.1); }
+.tweaks-swatch.active { box-shadow: 0 0 0 2px var(--ink); }
+
+/* ---------- Reveal animation ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Utility ---------- */
+.muted { color: var(--muted); }
+.center { text-align: center; }
+.grid { display: grid; gap: 24px; }
+.flex { display: flex; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.stack { display: flex; flex-direction: column; }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: #D8D3C4; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .nav-cta .btn:not(.nav-cta-mobile) { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .whatsapp-fab .whatsapp-label { display: none; }
+  .whatsapp-fab { padding: 14px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+/* ---------- Focus visibility ---------- */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--brand);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 0 0 var(--r-md) var(--r-md);
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 200;
+  transition: top .15s ease;
+}
+.skip-link:focus-visible { top: 0; outline-offset: 0; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+</style>
+  <style>
+    .quote-wrap { padding: clamp(40px,5vw,72px) 0 clamp(64px,7vw,100px); }
+    .quote-grid { display: grid; grid-template-columns: 0.9fr 1.3fr; gap: clamp(32px, 5vw, 72px); align-items: flex-start; }
+    @media (max-width: 960px) { .quote-grid { grid-template-columns: 1fr; } }
+
+    .quote-aside { position: sticky; top: calc(var(--nav-h) + 24px); }
+    .quote-aside h1 { margin-top: 18px; font-size: clamp(32px,3.5vw,44px); }
+    .quote-aside p.lead { margin-top: 18px; color: var(--muted); }
+
+    .quote-steps { margin-top: 40px; display: flex; flex-direction: column; gap: 4px; }
+    .qstep {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 0;
+      color: var(--muted); font-size: 14.5px;
+      border-bottom: 1px solid var(--line-2);
+    }
+    .qstep:last-child { border-bottom: 0; }
+    .qstep-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 12px; font-weight: 600;
+      background: var(--surface); color: var(--muted);
+      border: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+    .qstep.active { color: var(--ink); font-weight: 500; }
+    .qstep.active .qstep-num { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .qstep.done .qstep-num { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .qstep.done .qstep-num svg { width: 14px; height: 14px; }
+    .qstep.done { color: var(--ink); }
+
+    .quote-whatsapp {
+      margin-top: 32px;
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+    }
+    .quote-whatsapp h4 { font-size: 14px; margin-bottom: 6px; }
+    .quote-whatsapp p { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
+
+    /* Form card */
+    .quote-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-xl);
+      padding: clamp(28px, 3vw, 44px);
+      box-shadow: var(--shadow-md);
+      min-height: 620px;
+      display: flex; flex-direction: column;
+    }
+    .progress-bar {
+      height: 4px;
+      background: var(--line);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--brand);
+      border-radius: 999px;
+      transition: width .5s cubic-bezier(.3,.8,.3,1);
+    }
+    .step-header { margin-bottom: 28px; }
+    .step-header .eyebrow { color: var(--brand); font-size: 11px; }
+    .step-header .eyebrow::before { background: var(--brand); }
+    .step-header h2 { font-size: clamp(22px, 2.2vw, 28px); margin-top: 10px; letter-spacing: -0.02em; }
+    .step-header p { color: var(--muted); font-size: 14.5px; margin-top: 8px; }
+
+    .step { display: none; animation: fadeIn .3s ease; flex: 1; }
+    .step.active { display: flex; flex-direction: column; }
+
+    .field { margin-bottom: 20px; }
+    .field label {
+      display: block; font-size: 13px; font-weight: 500;
+      color: var(--ink-2); margin-bottom: 8px;
+    }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      background: var(--bg-2);
+      font-size: 15px;
+      transition: border .15s ease, background .15s ease, box-shadow .15s ease;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--brand);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(10,31,68,0.08);
+    }
+    .field textarea { resize: vertical; min-height: 96px; }
+    .field-error { color: var(--danger); font-size: 12.5px; margin-top: 6px; display: none; }
+    .field.error input, .field.error select { border-color: var(--danger); }
+    .field.error .field-error { display: block; }
+
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .field-row { grid-template-columns: 1fr; } }
+
+    /* Type selector (step 1) */
+    .type-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    @media (max-width: 600px) { .type-grid { grid-template-columns: 1fr 1fr; } }
+    .type-option {
+      padding: 20px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      background: var(--bg-2);
+      cursor: pointer;
+      transition: all .2s ease;
+      text-align: left;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .type-option:hover { border-color: var(--ink-2); background: #fff; }
+    .type-option.selected {
+      border-color: var(--brand);
+      background: var(--brand-50);
+      box-shadow: 0 0 0 2px var(--brand-50);
+    }
+    .type-option .icon {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: var(--surface); color: var(--brand);
+      display: grid; place-items: center;
+      border: 1px solid var(--line);
+    }
+    .type-option.selected .icon { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .type-option .icon svg { width: 18px; height: 18px; }
+    .type-option .name { font-weight: 550; font-size: 14px; color: var(--ink); }
+    .type-option .desc { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
+
+    /* Radio chips */
+    .chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      background: var(--bg-2);
+      border-radius: 999px;
+      font-size: 14px;
+      cursor: pointer;
+      color: var(--ink-2);
+      transition: all .15s ease;
+    }
+    .chip:hover { border-color: var(--ink-2); }
+    .chip.selected { border-color: var(--brand); background: var(--brand); color: #fff; }
+
+    .checkbox-row {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13.5px; color: var(--muted);
+      margin-top: 4px;
+    }
+    .checkbox-row input { margin-top: 3px; accent-color: var(--brand); }
+
+    .step-nav {
+      display: flex; justify-content: space-between;
+      margin-top: auto; padding-top: 28px;
+      gap: 12px;
+    }
+
+    /* Success */
+    .success { display: none; text-align: center; padding: 32px 0; flex: 1; flex-direction: column; justify-content: center; align-items: center; }
+    .success.active { display: flex; }
+    .success-icon {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: rgba(31,122,90,0.12);
+      color: var(--success);
+      display: grid; place-items: center;
+      margin: 0 auto 24px;
+    }
+    .success-icon svg { width: 36px; height: 36px; }
+    .success h2 { margin-bottom: 12px; }
+    .success p { color: var(--muted); max-width: 42ch; margin: 0 auto 28px; }
+
+    .summary-box {
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .summary-row {
+      display: flex; justify-content: space-between;
+      font-size: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line-2);
+    }
+    .summary-row:last-child { border-bottom: 0; }
+    .summary-row .k { color: var(--muted); }
+    .summary-row .v { color: var(--ink); font-weight: 500; text-align: right; }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="quote-wrap">
+      <div class="container">
+        <div class="quote-grid">
+          <aside class="quote-aside reveal">
+            <span class="eyebrow">Cotización en línea</span>
+            <h1>Empecemos por entender tu caso.</h1>
+            <p class="lead">Te tomará menos de 2 minutos. Recibirás una respuesta con opciones comparadas en 24 horas hábiles.</p>
+
+            <div class="quote-steps" id="stepsList">
+              <div class="qstep" data-step="1">
+                <span class="qstep-num">1</span>
+                <span>Tipo de seguro</span>
+              </div>
+              <div class="qstep" data-step="2">
+                <span class="qstep-num">2</span>
+                <span>Sobre ti</span>
+              </div>
+              <div class="qstep" data-step="3">
+                <span class="qstep-num">3</span>
+                <span>Detalles del caso</span>
+              </div>
+              <div class="qstep" data-step="4">
+                <span class="qstep-num">4</span>
+                <span>Contacto y envío</span>
+              </div>
+            </div>
+
+            <div class="quote-whatsapp">
+              <h4>¿Prefieres conversar?</h4>
+              <p>Escríbeme directo por WhatsApp y resolvemos en minutos.</p>
+              <a href="https://wa.me/584141234567" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.11 17.2c-.28-.14-1.66-.82-1.92-.91-.26-.09-.45-.14-.63.14-.19.28-.72.91-.88 1.1-.16.19-.32.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.74.35-.26.28-.98.96-.98 2.34 0 1.38 1 2.72 1.14 2.91.14.19 1.98 3.02 4.8 4.23 2.82 1.2 2.82.8 3.33.75.51-.05 1.66-.68 1.9-1.34.23-.66.23-1.22.16-1.34-.07-.12-.26-.19-.54-.33z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.87L2 22l5.25-1.38A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.09-.47-4.35-1.28l-.31-.19-3.13.82.84-3.05-.2-.32A7.95 7.95 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+                +58 414 123 4567
+              </a>
+            </div>
+          </aside>
+
+          <div class="quote-card reveal">
+            <div class="progress-bar"><div class="progress-bar-fill" id="progressFill" style="width: 25%;"></div></div>
+
+            <form id="quoteForm" novalidate>
+              <!-- STEP 1 -->
+              <div class="step active" data-step="1">
+                <div class="step-header">
+                  <span class="eyebrow">Paso 1 de 4</span>
+                  <h2>¿Qué tipo de seguro necesitas?</h2>
+                  <p>Elige el que mejor describa tu situación. Puedes añadir más después.</p>
+                </div>
+                <div class="type-grid">
+                  <button type="button" class="type-option" data-value="salud">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-7-11a5 5 0 0110-1 5 5 0 0110 1c0 6.5-7 11-7 11z" transform="translate(-2 0)"/></svg></span>
+                    <span class="name">Salud (HCM)</span>
+                    <span class="desc">Hospitalización, cirugía y maternidad</span>
+                  </button>
+                  <button type="button" class="type-option" data-value="auto">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 16l1-6 3-3h8l3 3 1 6v3h-2v-2H6v2H4z"/><circle cx="7.5" cy="16" r="1.5"/><circle cx="16.5" cy="16" r="1.5"/></svg></span>
+                    <span class="name">Auto / RCV</span>
+                    <span class="desc">Casco amplio o responsabilidad civil</span>
+                  </button>
+                  <button type="button" class="type-option" data-value="vida">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>
+                    <span class="name">Vida</span>
+                    <span class="desc">Capital por fallecimiento e invalidez</span>
+                  </button>
+                  <button type="button" class="type-option" data-value="viajes">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 16l20-8-6 13-3-6-6-1-5 2z"/></svg></span>
+                    <span class="name">Viajes</span>
+                    <span class="desc">Asistencia internacional y visas</span>
+                  </button>
+                  <button type="button" class="type-option" data-value="hogar">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6h-6v6H4a1 1 0 01-1-1z"/></svg></span>
+                    <span class="name">Hogar / Comercio</span>
+                    <span class="desc">Incendio, robo y responsabilidad civil</span>
+                  </button>
+                  <button type="button" class="type-option" data-value="empresas">
+                    <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M8 8V5a1 1 0 011-1h6a1 1 0 011 1v3"/></svg></span>
+                    <span class="name">Empresas</span>
+                    <span class="desc">HCM colectivo, patrimonial y flota</span>
+                  </button>
+                </div>
+                <div class="field-error" style="display:none;" id="err-type">Selecciona al menos un tipo para continuar.</div>
+
+                <div class="step-nav">
+                  <span></span>
+                  <button type="button" class="btn btn-primary" data-next>Continuar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                </div>
+              </div>
+
+              <!-- STEP 2 -->
+              <div class="step" data-step="2">
+                <div class="step-header">
+                  <span class="eyebrow">Paso 2 de 4</span>
+                  <h2>Cuéntame sobre ti.</h2>
+                  <p>Datos básicos para preparar tu cotización comparativa.</p>
+                </div>
+
+                <div class="field-row">
+                  <div class="field">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" placeholder="Ej. Andrea" required />
+                    <div class="field-error">Ingresa tu nombre.</div>
+                  </div>
+                  <div class="field">
+                    <label for="apellido">Apellido</label>
+                    <input id="apellido" name="apellido" placeholder="Ej. Méndez" required />
+                    <div class="field-error">Ingresa tu apellido.</div>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label>¿Es para ti o para tu empresa?</label>
+                  <div class="chip-group" id="audienceGroup">
+                    <button type="button" class="chip selected" data-value="personal">Persona / familia</button>
+                    <button type="button" class="chip" data-value="empresa">Empresa</button>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="ciudad">Ciudad</label>
+                  <select id="ciudad" name="ciudad" required>
+                    <option value="">Selecciona una ciudad</option>
+                    <option>Caracas</option>
+                    <option>Valencia</option>
+                    <option>Maracaibo</option>
+                    <option>Barquisimeto</option>
+                    <option>Maracay</option>
+                    <option>Ciudad Guayana</option>
+                    <option>San Cristóbal</option>
+                    <option>Otra</option>
+                  </select>
+                  <div class="field-error">Selecciona tu ciudad.</div>
+                </div>
+
+                <div class="step-nav">
+                  <button type="button" class="btn btn-ghost" data-prev><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Atrás</button>
+                  <button type="button" class="btn btn-primary" data-next>Continuar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                </div>
+              </div>
+
+              <!-- STEP 3 -->
+              <div class="step" data-step="3">
+                <div class="step-header">
+                  <span class="eyebrow">Paso 3 de 4</span>
+                  <h2>Detalles del caso.</h2>
+                  <p>Cuéntame lo que quieres proteger. Todo es confidencial.</p>
+                </div>
+
+                <div class="field">
+                  <label>Rango de edad (titular principal)</label>
+                  <div class="chip-group" id="edadGroup">
+                    <button type="button" class="chip" data-value="18-30">18–30</button>
+                    <button type="button" class="chip" data-value="31-45">31–45</button>
+                    <button type="button" class="chip" data-value="46-60">46–60</button>
+                    <button type="button" class="chip" data-value="60+">60+</button>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label>Urgencia</label>
+                  <div class="chip-group" id="urgenciaGroup">
+                    <button type="button" class="chip" data-value="hoy">Lo necesito hoy</button>
+                    <button type="button" class="chip selected" data-value="semana">Esta semana</button>
+                    <button type="button" class="chip" data-value="mes">Este mes</button>
+                    <button type="button" class="chip" data-value="explorando">Solo estoy explorando</button>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="comentario">Describe tu situación (opcional)</label>
+                  <textarea id="comentario" name="comentario" placeholder="Ej. Somos 4 en la familia, queremos HCM con cobertura internacional..."></textarea>
+                </div>
+
+                <div class="step-nav">
+                  <button type="button" class="btn btn-ghost" data-prev><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Atrás</button>
+                  <button type="button" class="btn btn-primary" data-next>Continuar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                </div>
+              </div>
+
+              <!-- STEP 4 -->
+              <div class="step" data-step="4">
+                <div class="step-header">
+                  <span class="eyebrow">Paso 4 de 4</span>
+                  <h2>¿Cómo te contacto?</h2>
+                  <p>Te respondo en menos de 24 horas hábiles con opciones comparadas.</p>
+                </div>
+
+                <div class="field-row">
+                  <div class="field">
+                    <label for="telefono">Teléfono / WhatsApp</label>
+                    <input id="telefono" name="telefono" type="tel" placeholder="+58 414 ..." required />
+                    <div class="field-error">Ingresa un teléfono válido.</div>
+                  </div>
+                  <div class="field">
+                    <label for="email">Correo electrónico</label>
+                    <input id="email" name="email" type="email" placeholder="nombre@correo.com" required />
+                    <div class="field-error">Ingresa un correo válido.</div>
+                  </div>
+                </div>
+
+                <div class="summary-box" id="summaryBox"></div>
+
+                <div class="field">
+                  <label class="checkbox-row">
+                    <input type="checkbox" id="autorizo" required />
+                    <span>Autorizo ser contactado por Juan Vicente Aguilar para recibir cotización y asesoría. Mis datos no serán compartidos con terceros.</span>
+                  </label>
+                  <div class="field-error" id="err-autorizo">Debes autorizar el contacto para enviar.</div>
+                </div>
+
+                <div class="step-nav">
+                  <button type="button" class="btn btn-ghost" data-prev><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Atrás</button>
+                  <button type="submit" class="btn btn-primary">Enviar cotización<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                </div>
+              </div>
+
+              <!-- SUCCESS -->
+              <div class="success" id="successPanel">
+                <div class="success-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <h2>¡Gracias! Ya recibí tu solicitud.</h2>
+                <p>En menos de 24 horas hábiles te responderé con una cotización comparativa. Si prefieres avanzar ahora, escríbeme por WhatsApp.</p>
+                <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                  <a href="https://wa.me/584141234567" class="btn btn-whatsapp" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+                  <a href="index.html" class="btn btn-ghost">Volver al inicio</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-fab"></div>
+  <script>/* Shared shell: header, footer, whatsapp FAB, tweaks, reveal */
+
+const WHATSAPP_NUMBER = '584141234567'; // placeholder Venezuela
+const WHATSAPP_TEXT = encodeURIComponent('Hola Juan Vicente, me gustaría recibir asesoría sobre un seguro.');
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
+
+const NAV_LINKS = [
+  { href: 'index.html', label: 'Inicio' },
+  { href: 'nosotros.html', label: 'Nosotros' },
+  { href: 'servicios.html', label: 'Seguros' },
+  { href: 'cotiza.html', label: 'Cotiza' },
+  { href: 'faq.html', label: 'FAQ' },
+  { href: 'contacto.html', label: 'Contacto' },
+];
+
+function currentPage() {
+  const path = location.pathname.split('/').pop() || 'index.html';
+  return path;
+}
+
+function renderHeader() {
+  const host = document.getElementById('site-header');
+  if (!host) return;
+  const cur = currentPage();
+  host.innerHTML = `
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="header" id="header">
+      <div class="container nav">
+        <a href="index.html" class="logo" aria-label="Juan Vicente Aguilar">
+          <span class="logo-mark">JA</span>
+          <span class="logo-text">
+            Juan Vicente Aguilar
+            <small>Corredor de seguros</small>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Principal">
+          ${NAV_LINKS.map(l => `<a href="${l.href}" class="${cur === l.href ? 'active' : ''}">${l.label}</a>`).join('')}
+        </nav>
+        <div class="nav-cta">
+          <a href="cotiza.html" class="btn btn-primary btn-sm">
+            Cotizar ahora
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileDrawer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        ${NAV_LINKS.map(l => `<a href="${l.href}">${l.label}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>`).join('')}
+        <a href="cotiza.html" class="btn btn-primary mobile-cta" style="justify-content:center; padding: 16px 22px;">Cotizar ahora</a>
+      </div>
+    </header>
+  `;
+
+  // scroll border
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // mobile toggle
+  const toggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('mobileDrawer');
+  toggle?.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    drawer.setAttribute('aria-hidden', String(!isOpen));
+  });
+  drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menú');
+  }));
+}
+
+function renderFooter() {
+  const host = document.getElementById('site-footer');
+  if (!host) return;
+  host.innerHTML = `
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo">
+              <span class="logo-mark">JA</span>
+              <span class="logo-text">
+                Juan Vicente Aguilar
+                <small>Corredor de seguros</small>
+              </span>
+            </div>
+            <p>Asesoría profesional e independiente en seguros para personas, familias y empresas en Venezuela. Cotización, emisión, renovación y acompañamiento ante siniestros.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="servicios.html#salud">Salud</a></li>
+              <li><a href="servicios.html#auto">Auto y RCV</a></li>
+              <li><a href="servicios.html#vida">Vida</a></li>
+              <li><a href="servicios.html#viajes">Viajes</a></li>
+              <li><a href="servicios.html#hogar">Hogar y Comercio</a></li>
+              <li><a href="servicios.html#empresas">Empresas</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Compañía</h4>
+            <ul>
+              <li><a href="nosotros.html">Sobre Juan Vicente</a></li>
+              <li><a href="faq.html">Preguntas frecuentes</a></li>
+              <li><a href="cotiza.html">Cotiza tu seguro</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+              <li>Caracas, Venezuela</li>
+              <li><a href="tel:+584141234567">+58 414 123 4567</a></li>
+              <li><a href="mailto:asesoria@jvaguilar.com">asesoria@jvaguilar.com</a></li>
+              <li>Lun – Vie · 8:30 am – 6:00 pm</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© ${new Date().getFullYear()} Juan Vicente Aguilar — Corredor de seguros. Todos los derechos reservados.</span>
+          <span>Registro SUDEASEG · RIF V-00.000.000-0</span>
+        </div>
+      </div>
+    </footer>
+  `;
+}
+
+function renderWhatsapp() {
+  const host = document.getElementById('site-fab');
+  if (!host) return;
+  host.innerHTML = `
+    <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Chatea por WhatsApp">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+        <path d="M19.11 17.2c-.28-.14-1.66-.82-1.92-.91-.26-.09-.45-.14-.63.14-.19.28-.72.91-.88 1.1-.16.19-.32.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.74.35-.26.28-.98.96-.98 2.34 0 1.38 1 2.72 1.14 2.91.14.19 1.98 3.02 4.8 4.23.67.29 1.19.46 1.6.59.67.21 1.28.18 1.77.11.54-.08 1.66-.68 1.9-1.34.23-.66.23-1.22.16-1.34-.07-.12-.26-.19-.54-.33zM16 5.33A10.66 10.66 0 0 0 6.92 21.4L5.33 26.67l5.43-1.57A10.67 10.67 0 1 0 16 5.33zm0 19.37a8.7 8.7 0 0 1-4.4-1.2l-.32-.19-3.22.93.94-3.14-.21-.33A8.7 8.7 0 1 1 16 24.7z"/>
+      </svg>
+      <span class="whatsapp-label">Escríbenos por WhatsApp</span>
+    </a>
+  `;
+}
+
+/* Tweaks */
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "primaryColor": "#0A1F44"
+}/*EDITMODE-END*/;
+
+const BRAND_PRESETS = [
+  { name: 'Azul marino',   value: '#0A1F44' },
+  { name: 'Verde bosque',  value: '#1E3A2F' },
+  { name: 'Negro ébano',   value: '#111418' },
+  { name: 'Azul eléctrico',value: '#1E4FD8' },
+  { name: 'Vino tinto',    value: '#5C1A2B' },
+  { name: 'Cobre',         value: '#8A4B2A' },
+];
+
+function applyTweaks(state) {
+  const color = state.primaryColor || TWEAK_DEFAULTS.primaryColor;
+  document.documentElement.style.setProperty('--brand', color);
+  // derive hover
+  const hover = shade(color, -8);
+  document.documentElement.style.setProperty('--brand-700', hover);
+}
+
+function shade(hex, percent) {
+  const h = hex.replace('#','');
+  const r = parseInt(h.substr(0,2),16);
+  const g = parseInt(h.substr(2,2),16);
+  const b = parseInt(h.substr(4,2),16);
+  const adj = (c) => Math.max(0, Math.min(255, Math.round(c + (percent/100)*255)));
+  return '#' + [adj(r),adj(g),adj(b)].map(c=>c.toString(16).padStart(2,'0')).join('');
+}
+
+let tweakState = { ...TWEAK_DEFAULTS };
+
+function renderTweaks() {
+  // Listen FIRST
+  window.addEventListener('message', (e) => {
+    const d = e.data || {};
+    if (d.type === '__activate_edit_mode') showTweaks(true);
+    if (d.type === '__deactivate_edit_mode') showTweaks(false);
+  });
+  // Then announce
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch {}
+
+  const el = document.createElement('div');
+  el.className = 'tweaks-panel';
+  el.id = 'tweaksPanel';
+  el.innerHTML = `
+    <h5>Color primario de marca</h5>
+    <div class="tweaks-swatches">
+      ${BRAND_PRESETS.map(p => `
+        <button class="tweaks-swatch ${p.value === tweakState.primaryColor ? 'active' : ''}"
+          data-color="${p.value}"
+          style="background:${p.value}"
+          title="${p.name}"></button>
+      `).join('')}
+    </div>
+  `;
+  document.body.appendChild(el);
+  el.querySelectorAll('.tweaks-swatch').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const c = btn.getAttribute('data-color');
+      tweakState.primaryColor = c;
+      applyTweaks(tweakState);
+      el.querySelectorAll('.tweaks-swatch').forEach(b => b.classList.toggle('active', b === btn));
+      try { window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { primaryColor: c } }, '*'); } catch {}
+    });
+  });
+
+  applyTweaks(tweakState);
+}
+
+function showTweaks(v) {
+  const p = document.getElementById('tweaksPanel');
+  if (p) p.classList.toggle('visible', v);
+}
+
+/* Reveal on scroll */
+function initReveal() {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(e => io.observe(e));
+}
+
+/* Init */
+document.addEventListener('DOMContentLoaded', () => {
+  renderHeader();
+  renderFooter();
+  renderWhatsapp();
+  renderTweaks();
+  initReveal();
+});
+</script>
+  <script>
+    (function() {
+      const state = {
+        step: 1,
+        totalSteps: 4,
+        tipos: new Set(),
+        audience: 'personal',
+        edad: null,
+        urgencia: 'semana',
+      };
+
+      // pre-select from URL
+      const url = new URL(location.href);
+      const preTipo = url.searchParams.get('tipo');
+      if (preTipo) state.tipos.add(preTipo);
+
+      function setStep(n) {
+        state.step = n;
+        document.querySelectorAll('.step').forEach(s => s.classList.toggle('active', +s.dataset.step === n));
+        document.querySelectorAll('.qstep').forEach(s => {
+          const step = +s.dataset.step;
+          s.classList.toggle('active', step === n);
+          s.classList.toggle('done', step < n);
+          if (step < n) s.querySelector('.qstep-num').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>';
+          else s.querySelector('.qstep-num').textContent = String(step);
+        });
+        document.getElementById('progressFill').style.width = `${(n / state.totalSteps) * 100}%`;
+        window.scrollTo({ top: document.querySelector('.quote-wrap').offsetTop - 60, behavior: 'smooth' });
+      }
+
+      // Type selection (multi)
+      document.querySelectorAll('.type-option').forEach(btn => {
+        if (state.tipos.has(btn.dataset.value)) btn.classList.add('selected');
+        btn.addEventListener('click', () => {
+          const v = btn.dataset.value;
+          if (state.tipos.has(v)) { state.tipos.delete(v); btn.classList.remove('selected'); }
+          else { state.tipos.add(v); btn.classList.add('selected'); }
+          document.getElementById('err-type').style.display = 'none';
+        });
+      });
+
+      // Chip groups
+      function singleChipGroup(id, key) {
+        const group = document.getElementById(id);
+        if (!group) return;
+        group.querySelectorAll('.chip').forEach(c => {
+          if (c.classList.contains('selected')) state[key] = c.dataset.value;
+          c.addEventListener('click', () => {
+            group.querySelectorAll('.chip').forEach(x => x.classList.remove('selected'));
+            c.classList.add('selected');
+            state[key] = c.dataset.value;
+          });
+        });
+      }
+      singleChipGroup('audienceGroup', 'audience');
+      singleChipGroup('edadGroup', 'edad');
+      singleChipGroup('urgenciaGroup', 'urgencia');
+
+      // Validation per step
+      function validateStep(n) {
+        let valid = true;
+        if (n === 1) {
+          if (state.tipos.size === 0) {
+            document.getElementById('err-type').style.display = 'block';
+            valid = false;
+          }
+        }
+        if (n === 2) {
+          ['nombre','apellido','ciudad'].forEach(id => {
+            const el = document.getElementById(id);
+            const field = el.closest('.field');
+            if (!el.value.trim()) { field.classList.add('error'); valid = false; }
+            else field.classList.remove('error');
+          });
+        }
+        if (n === 4) {
+          ['telefono','email'].forEach(id => {
+            const el = document.getElementById(id);
+            const field = el.closest('.field');
+            let ok = !!el.value.trim();
+            if (id === 'email') ok = ok && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+            if (id === 'telefono') ok = ok && el.value.replace(/\D/g,'').length >= 7;
+            if (!ok) { field.classList.add('error'); valid = false; }
+            else field.classList.remove('error');
+          });
+          const auth = document.getElementById('autorizo');
+          document.getElementById('err-autorizo').style.display = auth.checked ? 'none' : 'block';
+          if (!auth.checked) valid = false;
+        }
+        return valid;
+      }
+
+      function updateSummary() {
+        const labelMap = { salud:'Salud', auto:'Auto y RCV', vida:'Vida', viajes:'Viajes', hogar:'Hogar / Comercio', empresas:'Empresas' };
+        const tiposStr = Array.from(state.tipos).map(t => labelMap[t]).join(', ') || '—';
+        const name = `${document.getElementById('nombre').value} ${document.getElementById('apellido').value}`.trim() || '—';
+        const city = document.getElementById('ciudad').value || '—';
+        const audience = state.audience === 'empresa' ? 'Empresa' : 'Persona / familia';
+        const edad = state.edad || '—';
+        const urgencia = state.urgencia || '—';
+        document.getElementById('summaryBox').innerHTML = `
+          <div class="summary-row"><span class="k">Tipo de seguro</span><span class="v">${tiposStr}</span></div>
+          <div class="summary-row"><span class="k">Solicitante</span><span class="v">${name} · ${audience}</span></div>
+          <div class="summary-row"><span class="k">Ciudad</span><span class="v">${city}</span></div>
+          <div class="summary-row"><span class="k">Edad titular</span><span class="v">${edad}</span></div>
+          <div class="summary-row"><span class="k">Urgencia</span><span class="v">${urgencia}</span></div>
+        `;
+      }
+
+      document.querySelectorAll('[data-next]').forEach(btn => btn.addEventListener('click', () => {
+        if (!validateStep(state.step)) return;
+        const next = Math.min(state.totalSteps, state.step + 1);
+        if (next === 4) updateSummary();
+        setStep(next);
+      }));
+      document.querySelectorAll('[data-prev]').forEach(btn => btn.addEventListener('click', () => setStep(Math.max(1, state.step - 1))));
+
+      // Clear error on input
+      document.querySelectorAll('input, select, textarea').forEach(el => el.addEventListener('input', () => {
+        el.closest('.field')?.classList.remove('error');
+      }));
+
+      // Submit
+      document.getElementById('quoteForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!validateStep(4)) return;
+        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+        document.getElementById('successPanel').classList.add('active');
+        document.getElementById('progressFill').style.width = '100%';
+        document.querySelectorAll('.qstep').forEach(s => {
+          s.classList.add('done');
+          s.querySelector('.qstep-num').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>';
+        });
+      });
+
+      setStep(1);
+    })();
+  </script>
+</body>
+</html>

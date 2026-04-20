@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto — Juan Vicente Aguilar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;550;600;700&display=swap" rel="stylesheet">
+  <style id="app-styles">/* ============================================================
+   JUAN VICENTE AGUILAR — Corredor de Seguros
+   Design System
+   ============================================================ */
+
+:root {
+  /* Brand — overridable via Tweaks */
+  --brand: #0A1F44;
+  --brand-700: #0e2a5c;
+  --brand-600: #153a80;
+  --brand-50: #eef2f9;
+
+  /* Neutrals */
+  --bg: #F7F5F0;           /* warm off-white */
+  --bg-2: #FBFAF6;
+  --surface: #ffffff;
+  --ink: #0B1220;
+  --ink-2: #1F2937;
+  --muted: #556074;
+  --muted-2: #8A94A6;
+  --line: #E6E3DA;
+  --line-2: #EFECE3;
+
+  /* Accent — muted, used sparingly */
+  --accent: #B08A4B;       /* understated gold */
+  --accent-soft: #F2EADB;
+
+  /* State */
+  --success: #1F7A5A;
+  --danger: #B4442E;
+
+  /* Radii & shadows */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 22px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 1px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 8px 24px -12px rgba(10, 31, 68, 0.14), 0 2px 6px -2px rgba(10, 31, 68, 0.06);
+  --shadow-lg: 0 30px 60px -30px rgba(10, 31, 68, 0.28), 0 12px 24px -12px rgba(10, 31, 68, 0.10);
+
+  /* Type */
+  --font-sans: 'Inter', 'Geist', ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: 'Inter', 'Geist', ui-sans-serif, system-ui, sans-serif;
+
+  /* Layout */
+  --container: 1240px;
+  --nav-h: 76px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11";
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+input, textarea, select { font-family: inherit; font-size: inherit; color: inherit; }
+
+/* ---------- Typography ---------- */
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px; height: 1px; background: var(--muted-2);
+  display: inline-block;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(40px, 5.2vw, 68px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 550; }
+h2 { font-size: clamp(30px, 3.4vw, 46px); line-height: 1.08; letter-spacing: -0.03em; }
+h3 { font-size: clamp(20px, 1.6vw, 24px); line-height: 1.25; }
+h4 { font-size: 17px; line-height: 1.35; }
+
+p { margin: 0; color: var(--ink-2); text-wrap: pretty; }
+.lead { font-size: clamp(17px, 1.2vw, 19px); line-height: 1.55; color: var(--muted); max-width: 62ch; }
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.section { padding: clamp(64px, 8vw, 112px) 0; }
+.section-sm { padding: clamp(48px, 6vw, 80px) 0; }
+
+.divider { height: 1px; background: var(--line); width: 100%; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.005em;
+  transition: all .2s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+.btn svg { width: 16px; height: 16px; }
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--brand-700); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.btn-ghost:hover { background: var(--surface); border-color: var(--ink); }
+.btn-whatsapp {
+  background: #1FAE54;
+  color: #fff;
+}
+.btn-whatsapp:hover { background: #178c43; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-sm { padding: 10px 16px; font-size: 13px; }
+
+/* link with arrow */
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--brand);
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid transparent;
+  transition: gap .2s ease;
+}
+.link-arrow:hover { gap: 10px; }
+.link-arrow svg { width: 14px; height: 14px; }
+
+/* ---------- Header ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(247, 245, 240, 0.85);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease, background .2s ease;
+}
+.header.scrolled { border-bottom-color: var(--line); background: rgba(247, 245, 240, 0.92); }
+
+.nav {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-weight: 600; letter-spacing: -0.02em; font-size: 16px;
+  color: var(--ink);
+}
+.logo-mark {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: var(--brand);
+  color: #fff;
+  display: grid; place-items: center;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0;
+}
+.logo small {
+  display:block; font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+  color: var(--muted); text-transform: uppercase; margin-top: 2px;
+}
+.logo-text { line-height: 1.05; }
+
+.nav-links {
+  display: flex; align-items: center; gap: 6px;
+}
+.nav-links a {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: var(--ink-2);
+  border-radius: 8px;
+  transition: color .15s ease, background .15s ease;
+  font-weight: 450;
+}
+.nav-links a:hover { background: rgba(10,31,68,0.05); color: var(--ink); }
+.nav-links a.active { color: var(--brand); font-weight: 550; }
+
+.nav-cta { display: flex; align-items: center; gap: 10px; }
+
+.nav-toggle {
+  display: none;
+  width: 40px; height: 40px;
+  align-items: center; justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.nav-toggle svg { width: 20px; height: 20px; }
+
+/* Mobile drawer */
+.mobile-drawer {
+  display: none;
+  position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+  background: var(--bg);
+  padding: 24px 28px;
+  z-index: 55;
+  animation: fadeIn .2s ease;
+}
+.mobile-drawer.open { display: flex; flex-direction: column; gap: 8px; }
+.mobile-drawer a {
+  padding: 16px 0;
+  font-size: 20px;
+  border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.mobile-drawer .mobile-cta { margin-top: 24px; }
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--ink);
+  color: #D7DDE8;
+  padding: 80px 0 28px;
+  margin-top: 0;
+}
+.footer h4 { color: #fff; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+.footer a { color: #B9C2D1; font-size: 14px; transition: color .15s ease; }
+.footer a:hover { color: #fff; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-brand p {
+  color: #97A2B4; font-size: 14px; max-width: 34ch; margin-top: 14px;
+}
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-bottom {
+  margin-top: 72px; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: #8693A7;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer .logo-text { color: #fff; }
+.footer .logo small { color: #8693A7; }
+.footer .logo-mark { background: #fff; color: var(--brand); }
+
+/* ---------- WhatsApp FAB ---------- */
+.whatsapp-fab {
+  position: fixed;
+  right: 22px; bottom: 22px;
+  z-index: 70;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #1FAE54;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 500; font-size: 14px;
+  box-shadow: 0 14px 36px -10px rgba(31, 174, 84, 0.45), 0 4px 12px -4px rgba(0,0,0,0.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-fab:hover { transform: translateY(-2px); box-shadow: 0 20px 50px -12px rgba(31, 174, 84, 0.55); }
+.whatsapp-fab svg { width: 20px; height: 20px; }
+.whatsapp-fab .whatsapp-label { display: inline-block; }
+
+/* ---------- Tweaks panel ---------- */
+.tweaks-panel {
+  position: fixed;
+  right: 22px; bottom: 86px;
+  z-index: 71;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 16px;
+  width: 260px;
+  display: none;
+  animation: fadeIn .2s ease;
+}
+.tweaks-panel.visible { display: block; }
+.tweaks-panel h5 { margin: 0 0 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); font-weight: 600; }
+.tweaks-swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+.tweaks-swatch {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--line);
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+.tweaks-swatch:hover { transform: scale(1.1); }
+.tweaks-swatch.active { box-shadow: 0 0 0 2px var(--ink); }
+
+/* ---------- Reveal animation ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Utility ---------- */
+.muted { color: var(--muted); }
+.center { text-align: center; }
+.grid { display: grid; gap: 24px; }
+.flex { display: flex; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.stack { display: flex; flex-direction: column; }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: #D8D3C4; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .nav-cta .btn:not(.nav-cta-mobile) { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .whatsapp-fab .whatsapp-label { display: none; }
+  .whatsapp-fab { padding: 14px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+/* ---------- Focus visibility ---------- */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--brand);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 0 0 var(--r-md) var(--r-md);
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 200;
+  transition: top .15s ease;
+}
+.skip-link:focus-visible { top: 0; outline-offset: 0; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+</style>
+  <style>
+    .contact-wrap { padding: clamp(40px,5vw,72px) 0 clamp(64px,7vw,100px); }
+    .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px,5vw,64px); align-items: flex-start; }
+    @media (max-width: 960px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    .contact-info h1 { margin-top: 18px; font-size: clamp(36px,4vw,52px); }
+    .contact-info p.lead { margin-top: 20px; }
+
+    .channels { display: flex; flex-direction: column; gap: 14px; margin-top: 40px; }
+    .channel {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: var(--r-md);
+      transition: all .2s ease;
+    }
+    .channel:hover { border-color: var(--brand); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .channel-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--brand-50); color: var(--brand);
+      display: grid; place-items: center; flex-shrink: 0;
+    }
+    .channel-icon svg { width: 20px; height: 20px; }
+    .channel-body h4 { font-size: 15px; margin-bottom: 4px; }
+    .channel-body p { color: var(--muted); font-size: 14px; line-height: 1.4; }
+    .channel-body a { color: var(--ink); font-weight: 500; font-size: 14.5px; }
+    .channel-body a:hover { color: var(--brand); }
+
+    .schedule {
+      margin-top: 32px;
+      padding: 24px;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+    }
+    .schedule h4 { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 14px; }
+    .schedule-row {
+      display: flex; justify-content: space-between;
+      padding: 8px 0; font-size: 14px;
+      border-bottom: 1px solid var(--line-2);
+    }
+    .schedule-row:last-child { border-bottom: 0; }
+    .schedule-row .day { color: var(--muted); }
+    .schedule-row .hours { color: var(--ink); font-weight: 500; }
+
+    .contact-form {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-xl);
+      padding: clamp(28px,3vw,44px);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-form h2 { font-size: 24px; margin-bottom: 8px; }
+    .contact-form > p { color: var(--muted); font-size: 14.5px; margin-bottom: 24px; }
+
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 13px; font-weight: 500; color: var(--ink-2); margin-bottom: 8px; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 13px 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      background: var(--bg-2);
+      font-size: 15px;
+      transition: all .15s ease;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--brand); background: #fff;
+      box-shadow: 0 0 0 3px rgba(10,31,68,0.08);
+    }
+    .field textarea { resize: vertical; min-height: 110px; }
+    .field-error { color: var(--danger); font-size: 12.5px; margin-top: 6px; display: none; }
+    .field.error input, .field.error select, .field.error textarea { border-color: var(--danger); }
+    .field.error .field-error { display: block; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 500px) { .field-row { grid-template-columns: 1fr; } }
+
+    .checkbox-row {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13.5px; color: var(--muted);
+      margin: 8px 0 20px;
+    }
+    .checkbox-row input { margin-top: 3px; accent-color: var(--brand); }
+
+    .success-toast {
+      display: none;
+      padding: 16px 20px;
+      background: rgba(31,122,90,0.08);
+      border: 1px solid rgba(31,122,90,0.25);
+      color: #1F7A5A;
+      border-radius: var(--r-md);
+      font-size: 14.5px;
+      margin-bottom: 20px;
+      align-items: center;
+      gap: 12px;
+    }
+    .success-toast.visible { display: flex; }
+    .success-toast svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* Map mock */
+    .map {
+      margin-top: 32px;
+      aspect-ratio: 16/9;
+      border-radius: var(--r-md);
+      background: linear-gradient(135deg, #E6E9F0 0%, #D7DDE8 100%);
+      position: relative; overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .map::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(10,31,68,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10,31,68,0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .map-pin {
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -100%);
+      width: 40px; height: 40px;
+      color: var(--brand);
+    }
+    .map-pin::after {
+      content: ""; position: absolute; left: 50%; bottom: -8px;
+      transform: translateX(-50%);
+      width: 20px; height: 6px;
+      background: radial-gradient(ellipse, rgba(10,31,68,0.3), transparent 70%);
+    }
+    .map-card {
+      position: absolute; left: 24px; bottom: 24px;
+      background: #fff; border-radius: var(--r-md);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-md);
+      max-width: 280px;
+    }
+    .map-card strong { display: block; font-size: 14px; margin-bottom: 4px; }
+    .map-card small { color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="contact-wrap">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <span class="eyebrow">Contacto directo</span>
+            <h1>Hablemos.</h1>
+            <p class="lead">Escríbeme por el canal que prefieras. Respondo personalmente y te confirmo el siguiente paso en la misma conversación.</p>
+
+            <div class="channels">
+              <a href="https://wa.me/584141234567" target="_blank" rel="noopener" class="channel">
+                <div class="channel-icon" style="background: rgba(31,174,84,0.12); color: #1FAE54;">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.11 17.2c-.28-.14-1.66-.82-1.92-.91-.26-.09-.45-.14-.63.14-.19.28-.72.91-.88 1.1-.16.19-.32.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.74.35-.26.28-.98.96-.98 2.34 0 1.38 1 2.72 1.14 2.91.14.19 1.98 3.02 4.8 4.23 2.82 1.2 2.82.8 3.33.75.51-.05 1.66-.68 1.9-1.34.23-.66.23-1.22.16-1.34-.07-.12-.26-.19-.54-.33z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.87L2 22l5.25-1.38A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                </div>
+                <div class="channel-body">
+                  <h4>WhatsApp</h4>
+                  <p style="margin-bottom: 4px;">Respuesta en minutos, Lun–Vie</p>
+                  <a href="https://wa.me/584141234567">+58 414 123 4567</a>
+                </div>
+              </a>
+
+              <a href="tel:+584141234567" class="channel">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.34 1.78.66 2.6a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.48-1.48a2 2 0 012.11-.45c.82.32 1.7.54 2.6.66A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div class="channel-body">
+                  <h4>Teléfono</h4>
+                  <p style="margin-bottom: 4px;">Llamada directa en horario hábil</p>
+                  <a href="tel:+584141234567">+58 414 123 4567</a>
+                </div>
+              </a>
+
+              <a href="mailto:asesoria@jvaguilar.com" class="channel">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/><path d="M3 7l9 7 9-7"/></svg>
+                </div>
+                <div class="channel-body">
+                  <h4>Correo electrónico</h4>
+                  <p style="margin-bottom: 4px;">Ideal para documentos y cotizaciones</p>
+                  <a href="mailto:asesoria@jvaguilar.com">asesoria@jvaguilar.com</a>
+                </div>
+              </a>
+
+              <div class="channel">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-5-7-12a7 7 0 0114 0c0 7-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                </div>
+                <div class="channel-body">
+                  <h4>Oficina</h4>
+                  <p style="margin-bottom: 4px;">Atención con cita previa</p>
+                  <span style="color: var(--ink); font-weight: 500; font-size: 14.5px;">Av. Francisco de Miranda, Torre Financiera, Caracas</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="schedule">
+              <h4>Horario de atención</h4>
+              <div class="schedule-row"><span class="day">Lunes — Viernes</span><span class="hours">8:30 am – 6:00 pm</span></div>
+              <div class="schedule-row"><span class="day">Sábados</span><span class="hours">9:00 am – 1:00 pm (con cita)</span></div>
+              <div class="schedule-row"><span class="day">Siniestros urgentes</span><span class="hours">24/7 por WhatsApp</span></div>
+            </div>
+
+            <div class="map">
+              <svg class="map-pin" viewBox="0 0 24 32" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 20 12 20s12-11 12-20c0-6.6-5.4-12-12-12zm0 16.5a4.5 4.5 0 110-9 4.5 4.5 0 010 9z"/></svg>
+              <div class="map-card">
+                <strong>Oficina principal</strong>
+                <small>Av. Francisco de Miranda, Caracas · Venezuela</small>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <h2>Envíame un mensaje</h2>
+            <p>Cuéntame brevemente qué necesitas. Te respondo en menos de 24 horas hábiles.</p>
+
+            <div class="success-toast" id="successToast">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>¡Gracias! Tu mensaje fue recibido. Te contactaré personalmente en breve.</span>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="c-nombre">Nombre</label>
+                <input id="c-nombre" placeholder="Ej. Andrea Méndez" required />
+                <div class="field-error">Ingresa tu nombre.</div>
+              </div>
+              <div class="field">
+                <label for="c-telefono">Teléfono</label>
+                <input id="c-telefono" type="tel" placeholder="+58 414 ..." required />
+                <div class="field-error">Ingresa un teléfono válido.</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="c-email">Correo electrónico</label>
+              <input id="c-email" type="email" placeholder="nombre@correo.com" required />
+              <div class="field-error">Ingresa un correo válido.</div>
+            </div>
+
+            <div class="field">
+              <label for="c-tipo">Tema de consulta</label>
+              <select id="c-tipo" required>
+                <option value="">Selecciona un tema</option>
+                <option>Cotizar un seguro</option>
+                <option>Consulta sobre una póliza existente</option>
+                <option>Reporte de siniestro</option>
+                <option>Programa para mi empresa</option>
+                <option>Otro</option>
+              </select>
+              <div class="field-error">Selecciona un tema.</div>
+            </div>
+
+            <div class="field">
+              <label for="c-mensaje">Mensaje</label>
+              <textarea id="c-mensaje" placeholder="Cuéntame tu situación en pocas líneas..." required></textarea>
+              <div class="field-error">Escribe tu mensaje.</div>
+            </div>
+
+            <label class="checkbox-row">
+              <input type="checkbox" id="c-auth" required />
+              <span>Autorizo el contacto por Juan Vicente Aguilar. Mis datos no serán compartidos con terceros.</span>
+            </label>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px;">
+              Enviar mensaje
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p style="text-align:center; font-size: 13px; color: var(--muted); margin-top: 16px;">
+              ¿Prefieres WhatsApp? <a href="https://wa.me/584141234567" target="_blank" rel="noopener" style="color: var(--brand); font-weight: 500;">Escríbeme aquí →</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-fab"></div>
+  <script>/* Shared shell: header, footer, whatsapp FAB, tweaks, reveal */
+
+const WHATSAPP_NUMBER = '584141234567'; // placeholder Venezuela
+const WHATSAPP_TEXT = encodeURIComponent('Hola Juan Vicente, me gustaría recibir asesoría sobre un seguro.');
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
+
+const NAV_LINKS = [
+  { href: 'index.html', label: 'Inicio' },
+  { href: 'nosotros.html', label: 'Nosotros' },
+  { href: 'servicios.html', label: 'Seguros' },
+  { href: 'cotiza.html', label: 'Cotiza' },
+  { href: 'faq.html', label: 'FAQ' },
+  { href: 'contacto.html', label: 'Contacto' },
+];
+
+function currentPage() {
+  const path = location.pathname.split('/').pop() || 'index.html';
+  return path;
+}
+
+function renderHeader() {
+  const host = document.getElementById('site-header');
+  if (!host) return;
+  const cur = currentPage();
+  host.innerHTML = `
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="header" id="header">
+      <div class="container nav">
+        <a href="index.html" class="logo" aria-label="Juan Vicente Aguilar">
+          <span class="logo-mark">JA</span>
+          <span class="logo-text">
+            Juan Vicente Aguilar
+            <small>Corredor de seguros</small>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Principal">
+          ${NAV_LINKS.map(l => `<a href="${l.href}" class="${cur === l.href ? 'active' : ''}">${l.label}</a>`).join('')}
+        </nav>
+        <div class="nav-cta">
+          <a href="cotiza.html" class="btn btn-primary btn-sm">
+            Cotizar ahora
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileDrawer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        ${NAV_LINKS.map(l => `<a href="${l.href}">${l.label}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>`).join('')}
+        <a href="cotiza.html" class="btn btn-primary mobile-cta" style="justify-content:center; padding: 16px 22px;">Cotizar ahora</a>
+      </div>
+    </header>
+  `;
+
+  // scroll border
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // mobile toggle
+  const toggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('mobileDrawer');
+  toggle?.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    drawer.setAttribute('aria-hidden', String(!isOpen));
+  });
+  drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menú');
+  }));
+}
+
+function renderFooter() {
+  const host = document.getElementById('site-footer');
+  if (!host) return;
+  host.innerHTML = `
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo">
+              <span class="logo-mark">JA</span>
+              <span class="logo-text">
+                Juan Vicente Aguilar
+                <small>Corredor de seguros</small>
+              </span>
+            </div>
+            <p>Asesoría profesional e independiente en seguros para personas, familias y empresas en Venezuela. Cotización, emisión, renovación y acompañamiento ante siniestros.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="servicios.html#salud">Salud</a></li>
+              <li><a href="servicios.html#auto">Auto y RCV</a></li>
+              <li><a href="servicios.html#vida">Vida</a></li>
+              <li><a href="servicios.html#viajes">Viajes</a></li>
+              <li><a href="servicios.html#hogar">Hogar y Comercio</a></li>
+              <li><a href="servicios.html#empresas">Empresas</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Compañía</h4>
+            <ul>
+              <li><a href="nosotros.html">Sobre Juan Vicente</a></li>
+              <li><a href="faq.html">Preguntas frecuentes</a></li>
+              <li><a href="cotiza.html">Cotiza tu seguro</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+              <li>Caracas, Venezuela</li>
+              <li><a href="tel:+584141234567">+58 414 123 4567</a></li>
+              <li><a href="mailto:asesoria@jvaguilar.com">asesoria@jvaguilar.com</a></li>
+              <li>Lun – Vie · 8:30 am – 6:00 pm</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© ${new Date().getFullYear()} Juan Vicente Aguilar — Corredor de seguros. Todos los derechos reservados.</span>
+          <span>Registro SUDEASEG · RIF V-00.000.000-0</span>
+        </div>
+      </div>
+    </footer>
+  `;
+}
+
+function renderWhatsapp() {
+  const host = document.getElementById('site-fab');
+  if (!host) return;
+  host.innerHTML = `
+    <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Chatea por WhatsApp">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+        <path d="M19.11 17.2c-.28-.14-1.66-.82-1.92-.91-.26-.09-.45-.14-.63.14-.19.28-.72.91-.88 1.1-.16.19-.32.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48h-.54c-.19 0-.49.07-.74.35-.26.28-.98.96-.98 2.34 0 1.38 1 2.72 1.14 2.91.14.19 1.98 3.02 4.8 4.23.67.29 1.19.46 1.6.59.67.21 1.28.18 1.77.11.54-.08 1.66-.68 1.9-1.34.23-.66.23-1.22.16-1.34-.07-.12-.26-.19-.54-.33zM16 5.33A10.66 10.66 0 0 0 6.92 21.4L5.33 26.67l5.43-1.57A10.67 10.67 0 1 0 16 5.33zm0 19.37a8.7 8.7 0 0 1-4.4-1.2l-.32-.19-3.22.93.94-3.14-.21-.33A8.7 8.7 0 1 1 16 24.7z"/>
+      </svg>
+      <span class="whatsapp-label">Escríbenos por WhatsApp</span>
+    </a>
+  `;
+}
+
+/* Tweaks */
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "primaryColor": "#0A1F44"
+}/*EDITMODE-END*/;
+
+const BRAND_PRESETS = [
+  { name: 'Azul marino',   value: '#0A1F44' },
+  { name: 'Verde bosque',  value: '#1E3A2F' },
+  { name: 'Negro ébano',   value: '#111418' },
+  { name: 'Azul eléctrico',value: '#1E4FD8' },
+  { name: 'Vino tinto',    value: '#5C1A2B' },
+  { name: 'Cobre',         value: '#8A4B2A' },
+];
+
+function applyTweaks(state) {
+  const color = state.primaryColor || TWEAK_DEFAULTS.primaryColor;
+  document.documentElement.style.setProperty('--brand', color);
+  // derive hover
+  const hover = shade(color, -8);
+  document.documentElement.style.setProperty('--brand-700', hover);
+}
+
+function shade(hex, percent) {
+  const h = hex.replace('#','');
+  const r = parseInt(h.substr(0,2),16);
+  const g = parseInt(h.substr(2,2),16);
+  const b = parseInt(h.substr(4,2),16);
+  const adj = (c) => Math.max(0, Math.min(255, Math.round(c + (percent/100)*255)));
+  return '#' + [adj(r),adj(g),adj(b)].map(c=>c.toString(16).padStart(2,'0')).join('');
+}
+
+let tweakState = { ...TWEAK_DEFAULTS };
+
+function renderTweaks() {
+  // Listen FIRST
+  window.addEventListener('message', (e) => {
+    const d = e.data || {};
+    if (d.type === '__activate_edit_mode') showTweaks(true);
+    if (d.type === '__deactivate_edit_mode') showTweaks(false);
+  });
+  // Then announce
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch {}
+
+  const el = document.createElement('div');
+  el.className = 'tweaks-panel';
+  el.id = 'tweaksPanel';
+  el.innerHTML = `
+    <h5>Color primario de marca</h5>
+    <div class="tweaks-swatches">
+      ${BRAND_PRESETS.map(p => `
+        <button class="tweaks-swatch ${p.value === tweakState.primaryColor ? 'active' : ''}"
+          data-color="${p.value}"
+          style="background:${p.value}"
+          title="${p.name}"></button>
+      `).join('')}
+    </div>
+  `;
+  document.body.appendChild(el);
+  el.querySelectorAll('.tweaks-swatch').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const c = btn.getAttribute('data-color');
+      tweakState.primaryColor = c;
+      applyTweaks(tweakState);
+      el.querySelectorAll('.tweaks-swatch').forEach(b => b.classList.toggle('active', b === btn));
+      try { window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { primaryColor: c } }, '*'); } catch {}
+    });
+  });
+
+  applyTweaks(tweakState);
+}
+
+function showTweaks(v) {
+  const p = document.getElementById('tweaksPanel');
+  if (p) p.classList.toggle('visible', v);
+}
+
+/* Reveal on scroll */
+function initReveal() {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(e => io.observe(e));
+}
+
+/* Init */
+document.addEventListener('DOMContentLoaded', () => {
+  renderHeader();
+  renderFooter();
+  renderWhatsapp();
+  renderTweaks();
+  initReveal();
+});
+</script>
+  <script>
+    const form = document.getElementById('contactForm');
+    const toast = document.getElementById('successToast');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+      ['c-nombre','c-telefono','c-email','c-tipo','c-mensaje'].forEach(id => {
+        const el = document.getElementById(id);
+        const f = el.closest('.field');
+        let ok = !!el.value.trim();
+        if (id === 'c-email') ok = ok && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+        if (id === 'c-telefono') ok = ok && el.value.replace(/\D/g,'').length >= 7;
+        f.classList.toggle('error', !ok);
+        if (!ok) valid = false;
+      });
+      if (!document.getElementById('c-auth').checked) valid = false;
+      if (!valid) return;
+      toast.classList.add('visible');
+      form.reset();
+      window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+      setTimeout(() => toast.classList.remove('visible'), 6000);
+    });
+    document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea').forEach(el => {
+      el.addEventListener('input', () => el.closest('.field')?.classList.remove('error'));
+    });
+  </script>
+</body>
+</html>
